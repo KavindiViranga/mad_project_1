@@ -458,7 +458,7 @@ class _HelpCenterState extends State<HelpCenter> {
                                     child: Padding(
                                       padding: const EdgeInsets.only(top: 10),
                                       child: Image.asset(
-                                        'assets/images/plan.png',
+                                        'assets/images/loudspeaker.png',
                                         width: 100,
                                         height: 50,
                                         alignment: Alignment.center,
@@ -472,7 +472,7 @@ class _HelpCenterState extends State<HelpCenter> {
                                     child: TextButton(
                                       onPressed: () =>scrollToItem(context, itemKey4), // Add padding to move the text down
                                       child: Text(
-                                        'Education plan',
+                                        'Updates',
                                         style: TextStyle(
                                             fontSize: 15,
                                             color: Colors.black,
@@ -814,12 +814,13 @@ class _HelpCenterState extends State<HelpCenter> {
                     ],
                   ),
                   child: Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                    child: ListView(
+                      
                       children: [
                         Padding(
+                          
                           padding: const EdgeInsets.only(
-                              top: 10, left: 10, bottom: 10),
+                              top: 0, left: 10, bottom: 0),
                           // Add padding to move the text down
                           child: Text(
                             'Frequently Asked Questions',
@@ -1558,28 +1559,96 @@ class _HelpCenterState extends State<HelpCenter> {
                 ),
 
                 Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.90,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  margin: const EdgeInsets.only(right: 20, left: 20, top: 20),
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius: BorderRadius.circular(24),
-                    border: Border.all(
-                      color: HexColor("#AFB0AB"),
-                      width: 0.3,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 10,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
+  width: MediaQuery.of(context).size.width,
+  height: MediaQuery.of(context).size.height * 0.90,
+  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  margin: const EdgeInsets.only(right: 20, left: 20, top: 20),
+  decoration: BoxDecoration(
+    color: Color.fromARGB(255, 255, 255, 255),
+    borderRadius: BorderRadius.circular(24),
+    border: Border.all(
+      color: HexColor("#AFB0AB"),
+      width: 0.3,
+    ),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.5),
+        spreadRadius: 2,
+        blurRadius: 10,
+        offset: Offset(0, 3),
+      ),
+    ],
+  ),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: [
+      SizedBox(height: 0),
+      Padding(
+        padding: const EdgeInsets.only(top: 10, left: 10, bottom: 10),
+        child: Text(
+          "What's New",
+          style: TextStyle(
+            fontSize: 18,
+            color: Color.fromARGB(255, 91, 91, 91),
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ),
+      Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width * 0.30,
+            height: MediaQuery.of(context).size.height * 0.075,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            margin: const EdgeInsets.only(right: 0, left: 0, top: 0),
+            decoration: BoxDecoration(
+              color: HexColor('FFFFFF'),
+              borderRadius: BorderRadius.circular(24),
+              border: Border.all(
+                color: HexColor("#FFFFFF"),
+                width: 0.3,
+              ),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(8.0),
+                    topRight: Radius.circular(8.0),
+                  ),
+                  child: Image.asset(
+                    'assets/images/d2.png',
+                    width: MediaQuery.of(context).size.width * 0.07,
+                    height: MediaQuery.of(context).size.height * 0.07,
+                    alignment: Alignment.centerLeft,
+                    //fit: BoxFit.fill,
                   ),
                 ),
+                SizedBox(width: 15),
+                Expanded(
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Directions span the entire campus.',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: HexColor('3F3F3F'),
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ],
+  ),
+),
               ],
             ),
           ],
